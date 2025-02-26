@@ -1,7 +1,7 @@
 'use client';
 
+import Logo from "@/assets/icons";
 // import { useLogoutMutation } from "@/api/Auth";
-import { Logo } from "@/components/atoms/logo";
 import { Navigation } from "@/components/organisms/navigation";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -39,37 +39,35 @@ export const Header = () => {
   // };
 
   return (
-    <header>
-      <div className="flex justify-between py-4 px-40">
-        <Logo />
-        <Navigation />
-        <div className="flex items-center gap-x-4">
-          <Link href={"/a/chats"} >
-            <MessageSquareMore className="hover:cursor-pointer" size={30} />
-          </Link>
-          <Popover>
-            <PopoverTrigger>
-              <BellDot className="hover:cursor-pointer" size={30} />
-            </PopoverTrigger>
-            <PopoverContent align="end" className="flex w-full justify-center items-center">
-                Здесь будут уведомления и сообщения
-            </PopoverContent>
-          </Popover>
-          <Popover open={open} onOpenChange={setOpen}>
-            <PopoverTrigger asChild>
-              <Avatar className="hover:cursor-pointer">
-                <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s" />
-              </Avatar>
-            </PopoverTrigger>
-            <PopoverContent align="end" onClick={() => setOpen(false)}>
-              <div className="flex flex-col gap-y-1">
-                <Button size={'sm'} variant={'ghost'} asChild><Link href={"/profile"}>Профиль</Link></Button>
-                <Button size={'sm'} variant={'ghost'} asChild><Link href={"/profile"}>Настройки</Link></Button>
-                <Button size={'sm'}>Выйти</Button>
-              </div>
-            </PopoverContent>
-          </Popover>
-        </div>
+    <header className="flex justify-between py-4 px-5 md:px-20 lg:px-40">
+      <Logo />
+      <Navigation />
+      <div className="flex items-center gap-x-4">
+        <Link href={"/a/chats"} >
+          <MessageSquareMore className="hover:cursor-pointer" size={30} />
+        </Link>
+        <Popover>
+          <PopoverTrigger>
+            <BellDot className="hover:cursor-pointer" size={30} />
+          </PopoverTrigger>
+          <PopoverContent align="end" className="flex w-full justify-center items-center">
+            Здесь будут уведомления и сообщения
+          </PopoverContent>
+        </Popover>
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Avatar className="hover:cursor-pointer">
+              <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s" />
+            </Avatar>
+          </PopoverTrigger>
+          <PopoverContent align="end" onClick={() => setOpen(false)}>
+            <div className="flex flex-col gap-y-1">
+              <Button size={'sm'} variant={'ghost'} asChild><Link href={"/profile"}>Профиль</Link></Button>
+              <Button size={'sm'} variant={'ghost'} asChild><Link href={"/profile"}>Настройки</Link></Button>
+              <Button size={'sm'}>Выйти</Button>
+            </div>
+          </PopoverContent>
+        </Popover>
       </div>
     </header>
   );

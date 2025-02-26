@@ -1,4 +1,4 @@
-import { Role } from "@/constants/role";
+import { Role } from "@/consts/role";
 import { User } from "../User/types";
 
 export interface LoginRequest {
