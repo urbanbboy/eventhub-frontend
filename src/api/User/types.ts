@@ -1,4 +1,4 @@
-import { Role } from "@/constants/role";
+import { Role } from "@/consts/role";
 
 export interface User {
   email: string;
